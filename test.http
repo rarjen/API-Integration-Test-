@@ -1,0 +1,67 @@
+POST http://localhost:3000/auth
+Content-Type: application/json
+
+{
+    "email": "messi@gmail.com",
+    "username": "messiLM10",
+    "password" : "qwerty123"
+}
+
+### LOGIN
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "email": "ronaldo@gmail.com",
+    "password": "qwerty123"
+}
+
+### CREATE BIO
+POST http://localhost:3000/userBio
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJyb25hbGRvQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoicm9uYWxkb0NSNyIsImlhdCI6MTY2NDg1MzM2NX0.MGBdLCmf-7WtIuxh0DZSgOlL7icRubsnpmBr85NljLI 
+
+{
+    "bio": "Manchester United Player"
+}
+
+### UPDATE BIO
+PUT http://localhost:3000/userBio/update
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJyb25hbGRvQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoicm9uYWxkb0NSNyIsImlhdCI6MTY2NDg1MzM2NX0.MGBdLCmf-7WtIuxh0DZSgOlL7icRubsnpmBr85NljLI 
+
+{
+    "bio": "Manchester United Player & Portugal National Team Captain"
+}
+
+### GET ALL BIO
+GET http://localhost:3000/userBio/index
+Content-Type: application/json
+
+### GET BIO BY ID
+GET http://localhost:3000/userBio/2
+Content-Type: application/json
+
+### DELETE BIO
+DELETE  http://localhost:3000/userBio
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJyb25hbGRvQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoicm9uYWxkb0NSNyIsImlhdCI6MTY2NDg1Mjc1M30._eC_cVUHABVvB5tyM5vN4DzEXmNvOFr3szuySS1SZo0
+
+### CREATE HISTORY
+POST http://localhost:3000/userHistory
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJyb25hbGRvQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoicm9uYWxkb0NSNyIsImlhdCI6MTY2NDg1Mjc1M30._eC_cVUHABVvB5tyM5vN4DzEXmNvOFr3szuySS1SZo0 
+
+{
+    "score": 5000
+}
+
+### GET ALL HISTORY
+GET http://localhost:3000/userHistory/index
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJyb25hbGRvQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoicm9uYWxkb0NSNyIsImlhdCI6MTY2NDg1Mjc1M30._eC_cVUHABVvB5tyM5vN4DzEXmNvOFr3szuySS1SZo0 
+
+### GET HISTORY BY ID
+GET http://localhost:3000/userHistory/1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJyb25hbGRvQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoicm9uYWxkb0NSNyIsImlhdCI6MTY2NDg1Mjc1M30._eC_cVUHABVvB5tyM5vN4DzEXmNvOFr3szuySS1SZo0 
