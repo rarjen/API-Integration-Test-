@@ -18,7 +18,8 @@
     "jsonwebtoken": "^8.5.1",
     "pg": "^8.8.0",
     "pg-hstore": "^2.3.4",
-    "sequelize": "^6.23.0"
+    "sequelize": "^6.23.0",
+    "postman-collection": "^4.1.5"
   },
   "devDependencies": {
     "morgan": "^1.10.0",

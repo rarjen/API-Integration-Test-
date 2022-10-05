@@ -1,0 +1,244 @@
+{
+  "item": [
+    {
+      "id": "8124adb3-0674-4c8f-82a8-8f534e600dcc",
+      "name": "Request User Register",
+      "request": {
+        "url": {
+          "protocol": "http",
+          "port": "3000",
+          "path": ["auth"],
+          "host": ["localhost"],
+          "query": [],
+          "variable": []
+        },
+        "header": [{ "key": "Content-type", "value": "application/json" }],
+        "method": "POST",
+        "body": {
+          "mode": "raw",
+          "raw": "{\"email\":\"lewandowski09@gmail.com\",\"username\":\"RL09\",\"password\":\"qwerty123\"}"
+        }
+      },
+      "response": [],
+      "event": []
+    },
+    {
+      "id": "8657b261-acc4-4187-b235-2e8e4adb918a",
+      "name": "Request User Login",
+      "request": {
+        "url": {
+          "protocol": "http",
+          "port": "3000",
+          "path": ["auth", "login"],
+          "host": ["localhost"],
+          "query": [],
+          "variable": []
+        },
+        "header": [{ "key": "Content-type", "value": "application/json" }],
+        "method": "POST",
+        "body": {
+          "mode": "raw",
+          "raw": "{\"email\":\"lewandowski09@gmail.com\",\"password\":\"qwerty123\"}"
+        }
+      },
+      "response": [],
+      "event": []
+    },
+    {
+      "id": "3dc75aed-4bf3-4363-a4c4-44a587ddfb73",
+      "name": "Request User Create Bio",
+      "request": {
+        "url": {
+          "protocol": "http",
+          "port": "3000",
+          "path": ["userBio"],
+          "host": ["localhost"],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          { "key": "Content-type", "value": "application/json" },
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJsZXdhbmRvd3NraTA5QGdtYWlsLmNvbSIsInVzZXJuYW1lIjoiUkwwOSIsImlhdCI6MTY2NDg2MzM2MX0.UXJ2rQHrkqEpvhWDp2m1_pIegfWJgJTTZIMtDqtwmlY"
+          }
+        ],
+        "method": "POST",
+        "body": {
+          "mode": "raw",
+          "raw": "{\"bio\":\"Best Number 9 in the world\"}"
+        }
+      },
+      "response": [],
+      "event": []
+    },
+    {
+      "id": "8397849f-ab8f-4ecc-b854-e1f395d71f39",
+      "name": "Request Update Bio",
+      "request": {
+        "url": {
+          "protocol": "http",
+          "port": "3000",
+          "path": ["userBio", "update"],
+          "host": ["localhost"],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          { "key": "Content-type", "value": "application/json" },
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJsZXdhbmRvd3NraTA5QGdtYWlsLmNvbSIsInVzZXJuYW1lIjoiUkwwOSIsImlhdCI6MTY2NDg2MzM2MX0.UXJ2rQHrkqEpvhWDp2m1_pIegfWJgJTTZIMtDqtwmlY"
+          }
+        ],
+        "method": "PUT",
+        "body": {
+          "mode": "raw",
+          "raw": "{\"bio\":\"Best Number 9 in the world at the moment\"}"
+        }
+      },
+      "response": [],
+      "event": []
+    },
+    {
+      "id": "b4fa9fb3-3f98-4a15-9b5b-55c23a62fd98",
+      "name": "Request Get All Bio",
+      "request": {
+        "url": {
+          "protocol": "http",
+          "port": "3000",
+          "path": ["userBio", "index"],
+          "host": ["localhost"],
+          "query": [],
+          "variable": []
+        },
+        "header": [{ "key": "Content-type", "value": "application/json" }],
+        "method": "GET"
+      },
+      "response": [],
+      "event": []
+    },
+    {
+      "id": "c11322fb-04e0-461f-b900-756c6ebbadc8",
+      "name": "Request Get Bio by Id",
+      "request": {
+        "url": {
+          "protocol": "http",
+          "port": "3000",
+          "path": ["userBio", "2"],
+          "host": ["localhost"],
+          "query": [],
+          "variable": []
+        },
+        "header": [{ "key": "Content-type", "value": "application/json" }],
+        "method": "GET"
+      },
+      "response": [],
+      "event": []
+    },
+    {
+      "id": "f957e5d4-3a56-4b59-9d00-09ebddd8f786",
+      "name": "Request Delete Bio",
+      "request": {
+        "url": {
+          "protocol": "http",
+          "port": "3000",
+          "path": ["userBio"],
+          "host": ["localhost"],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          { "key": "Content-type", "value": "application/json" },
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJsZXdhbmRvd3NraTA5QGdtYWlsLmNvbSIsInVzZXJuYW1lIjoiUkwwOSIsImlhdCI6MTY2NDg2MzM2MX0.UXJ2rQHrkqEpvhWDp2m1_pIegfWJgJTTZIMtDqtwmlY"
+          }
+        ],
+        "method": "DELETE"
+      },
+      "response": [],
+      "event": []
+    },
+    {
+      "id": "52c19e61-7aae-45e2-a799-fced21bcd0cd",
+      "name": "Request Create History",
+      "request": {
+        "url": {
+          "protocol": "http",
+          "port": "3000",
+          "path": ["userHistory"],
+          "host": ["localhost"],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          { "key": "Content-type", "value": "application/json" },
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJsZXdhbmRvd3NraTA5QGdtYWlsLmNvbSIsInVzZXJuYW1lIjoiUkwwOSIsImlhdCI6MTY2NDg2MzM2MX0.UXJ2rQHrkqEpvhWDp2m1_pIegfWJgJTTZIMtDqtwmlY"
+          }
+        ],
+        "method": "POST",
+        "body": { "mode": "raw", "raw": "{\"score\":5000}" }
+      },
+      "response": [],
+      "event": []
+    },
+    {
+      "id": "554a638f-883c-4d00-8a58-80af43439a6a",
+      "name": "Request Get All History",
+      "request": {
+        "url": {
+          "protocol": "http",
+          "port": "3000",
+          "path": ["userHistory", "index"],
+          "host": ["localhost"],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          { "key": "Content-type", "value": "application/json" },
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJsZXdhbmRvd3NraTA5QGdtYWlsLmNvbSIsInVzZXJuYW1lIjoiUkwwOSIsImlhdCI6MTY2NDg2MzM2MX0.UXJ2rQHrkqEpvhWDp2m1_pIegfWJgJTTZIMtDqtwmlY"
+          }
+        ],
+        "method": "GET"
+      },
+      "response": [],
+      "event": []
+    },
+    {
+      "id": "876e2a1e-5556-4ef0-80a1-e11fc93896ec",
+      "name": "Request Get History by Id",
+      "request": {
+        "url": {
+          "protocol": "http",
+          "port": "3000",
+          "path": ["userHistory", "1"],
+          "host": ["localhost"],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          { "key": "Content-type", "value": "application/json" },
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJsZXdhbmRvd3NraTA5QGdtYWlsLmNvbSIsInVzZXJuYW1lIjoiUkwwOSIsImlhdCI6MTY2NDg2MzM2MX0.UXJ2rQHrkqEpvhWDp2m1_pIegfWJgJTTZIMtDqtwmlY"
+          }
+        ],
+        "method": "GET"
+      },
+      "response": [],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [],
+  "info": {
+    "_postman_id": "b46a305f-639c-4961-a1c9-eac51603ed22",
+    "name": "Dokumentasi RESTful API Challenge-4",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  }
+}
