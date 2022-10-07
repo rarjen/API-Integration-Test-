@@ -1,0 +1,948 @@
+{
+	"info": {
+		"_postman_id": "cb532ddc-6c38-408a-9fff-b9a83987c85b",
+		"name": "Dokumentasi RESTful API Challenge-4",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23007106"
+	},
+	"item": [
+		{
+			"name": "Request User Register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"mbappe@gmail.com\",\r\n    \"username\": \"KMbappe10\",\r\n    \"password\": \"qwerty123\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Request User Register",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"mbappe@gmail.com\",\r\n    \"username\": \"KMbappe10\",\r\n    \"password\": \"qwerty123\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "102"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"66-G3tCbpXadY6PS1aEX+NKOlA555g\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 04 Oct 2022 06:34:21 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"Account Created\",\n    \"data\": {\n        \"email\": \"mbappe@gmail.com\",\n        \"username\": \"KMbappe10\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Request User Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"mbappe@gmail.com\",\r\n    \"password\": \"qwerty123\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Request User Login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"mbappe@gmail.com\",\r\n    \"password\": \"qwerty123\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "242"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"f2-0f486tzMp0Tbj3F3Hhau7mjXiMk\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 04 Oct 2022 06:35:31 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"Success Login\",\n    \"data\": {\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiZW1haWwiOiJtYmFwcGVAZ21haWwuY29tIiwidXNlcm5hbWUiOiJLTWJhcHBlMTAiLCJpYXQiOjE2NjQ4NjUzMzF9.cBxw5NjTKNIVpWZCJLEjDDztrK33hhsonOVP9ercxo4\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Request User Create Bio",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiZW1haWwiOiJtYmFwcGVAZ21haWwuY29tIiwidXNlcm5hbWUiOiJLTWJhcHBlMTAiLCJpYXQiOjE2NjQ4NjUzMzF9.cBxw5NjTKNIVpWZCJLEjDDztrK33hhsonOVP9ercxo4"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"bio\": \"Player of PSG\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/userBio",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"userBio"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Request User Create Bio",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiZW1haWwiOiJtYmFwcGVAZ21haWwuY29tIiwidXNlcm5hbWUiOiJLTWJhcHBlMTAiLCJpYXQiOjE2NjQ4NjUzMzF9.cBxw5NjTKNIVpWZCJLEjDDztrK33hhsonOVP9ercxo4"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bio\": \"Player of PSG\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/userBio",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"userBio"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "190"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"be-yBvUwZoOPCX+zuMOET8QCBOf/Ac\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 04 Oct 2022 06:36:52 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"Bio Created\",\n    \"data\": {\n        \"id\": 5,\n        \"username\": \"KMbappe10\",\n        \"bio\": \"Player of PSG\",\n        \"user_id\": 5,\n        \"updatedAt\": \"2022-10-04T06:36:52.564Z\",\n        \"createdAt\": \"2022-10-04T06:36:52.564Z\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Request Update Bio",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiZW1haWwiOiJtYmFwcGVAZ21haWwuY29tIiwidXNlcm5hbWUiOiJLTWJhcHBlMTAiLCJpYXQiOjE2NjQ4NjUzMzF9.cBxw5NjTKNIVpWZCJLEjDDztrK33hhsonOVP9ercxo4"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"bio\": \"Player of PSG and France National Team\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/userBio/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"userBio",
+						"update"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Request Update Bio",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiZW1haWwiOiJtYmFwcGVAZ21haWwuY29tIiwidXNlcm5hbWUiOiJLTWJhcHBlMTAiLCJpYXQiOjE2NjQ4NjUzMzF9.cBxw5NjTKNIVpWZCJLEjDDztrK33hhsonOVP9ercxo4"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bio\": \"Player of PSG and France National Team\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/userBio/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"userBio",
+								"update"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "118"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"76-MmEPuFyHcNZBu3GmEdvRPsZwBbI\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 04 Oct 2022 06:37:50 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"Bio Updated\",\n    \"data\": {\n        \"username\": \"KMbappe10\",\n        \"bio\": \"Player of PSG and France National Team\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Request Get All Bio",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/userBio/index",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"userBio",
+						"index"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Request Get All Bio",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/userBio/index",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"userBio",
+								"index"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "549"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"225-gkk0o+qz7V9aliJUKIXb1mlEgpg\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 04 Oct 2022 06:33:39 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"Success Get All Data\",\n    \"data\": [\n        {\n            \"id\": 2,\n            \"username\": \"messiLM10\",\n            \"bio\": \"The Real GOAT, NO DOUBT\",\n            \"user_id\": 2,\n            \"createdAt\": \"2022-10-04T02:39:27.377Z\",\n            \"updatedAt\": \"2022-10-04T02:45:28.599Z\"\n        },\n        {\n            \"id\": 3,\n            \"username\": \"ronaldoCR7\",\n            \"bio\": \"Manchester United Player & Portugal National Team Captain\",\n            \"user_id\": 1,\n            \"createdAt\": \"2022-10-04T03:16:35.171Z\",\n            \"updatedAt\": \"2022-10-04T03:24:25.344Z\"\n        },\n        {\n            \"id\": 4,\n            \"username\": \"Haaland09\",\n            \"bio\": \"Manchester is Blue\",\n            \"user_id\": 4,\n            \"createdAt\": \"2022-10-04T05:56:45.163Z\",\n            \"updatedAt\": \"2022-10-04T05:56:45.163Z\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Request Get Bio by Id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/userBio/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"userBio",
+						"2"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Request Get Bio by Id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/userBio/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"userBio",
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "205"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"cd-CfNksDZcSyjYPES6UO+nZ2/Gmus\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 04 Oct 2022 06:33:25 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"Success Get Data\",\n    \"data\": {\n        \"id\": 2,\n        \"username\": \"messiLM10\",\n        \"bio\": \"The Real GOAT, NO DOUBT\",\n        \"user_id\": 2,\n        \"createdAt\": \"2022-10-04T02:39:27.377Z\",\n        \"updatedAt\": \"2022-10-04T02:45:28.599Z\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Request Delete Bio",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiZW1haWwiOiJtYmFwcGVAZ21haWwuY29tIiwidXNlcm5hbWUiOiJLTWJhcHBlMTAiLCJpYXQiOjE2NjQ4NjUzMzF9.cBxw5NjTKNIVpWZCJLEjDDztrK33hhsonOVP9ercxo4"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/userBio",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"userBio"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Request Delete Bio",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiZW1haWwiOiJtYmFwcGVAZ21haWwuY29tIiwidXNlcm5hbWUiOiJLTWJhcHBlMTAiLCJpYXQiOjE2NjQ4NjUzMzF9.cBxw5NjTKNIVpWZCJLEjDDztrK33hhsonOVP9ercxo4"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/userBio",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"userBio"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "56"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"38-oezGhrcyZhYiIpzgSTxUSjMAGDM\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 04 Oct 2022 06:38:25 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"Success Delete Data\",\n    \"data\": 1\n}"
+				}
+			]
+		},
+		{
+			"name": "Request Create History",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiZW1haWwiOiJtYmFwcGVAZ21haWwuY29tIiwidXNlcm5hbWUiOiJLTWJhcHBlMTAiLCJpYXQiOjE2NjQ4NjUzMzF9.cBxw5NjTKNIVpWZCJLEjDDztrK33hhsonOVP9ercxo4"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"score\": 5000\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/userHistory",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"userHistory"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Request Create History",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiZW1haWwiOiJtYmFwcGVAZ21haWwuY29tIiwidXNlcm5hbWUiOiJLTWJhcHBlMTAiLCJpYXQiOjE2NjQ4NjUzMzF9.cBxw5NjTKNIVpWZCJLEjDDztrK33hhsonOVP9ercxo4"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"score\": 5000\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/userHistory",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"userHistory"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "181"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"b5-AflYS77Z8R3W2p61YKZehWM5/1o\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 04 Oct 2022 06:38:47 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"Score Saved\",\n    \"data\": {\n        \"id\": 7,\n        \"username\": \"KMbappe10\",\n        \"score\": 5000,\n        \"user_id\": 5,\n        \"updatedAt\": \"2022-10-04T06:38:47.611Z\",\n        \"createdAt\": \"2022-10-04T06:38:47.611Z\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Request Get All History",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJsZXdhbmRvd3NraTA5QGdtYWlsLmNvbSIsInVzZXJuYW1lIjoiUkwwOSIsImlhdCI6MTY2NDg2MzM2MX0.UXJ2rQHrkqEpvhWDp2m1_pIegfWJgJTTZIMtDqtwmlY"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/userHistory/index",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"userHistory",
+						"index"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Request Get All History",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJsZXdhbmRvd3NraTA5QGdtYWlsLmNvbSIsInVzZXJuYW1lIjoiUkwwOSIsImlhdCI6MTY2NDg2MzM2MX0.UXJ2rQHrkqEpvhWDp2m1_pIegfWJgJTTZIMtDqtwmlY"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/userHistory/index",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"userHistory",
+								"index"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "870"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"366-hhpeG7m0+tJpDdJZRhx+z91RO+I\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 04 Oct 2022 06:32:55 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"Success Get All Data\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"username\": \"messiLM10\",\n            \"score\": 1000,\n            \"user_id\": 2,\n            \"createdAt\": \"2022-10-04T02:56:34.090Z\",\n            \"updatedAt\": \"2022-10-04T02:56:34.090Z\"\n        },\n        {\n            \"id\": 2,\n            \"username\": \"messiLM10\",\n            \"score\": 2000,\n            \"user_id\": 2,\n            \"createdAt\": \"2022-10-04T02:56:56.203Z\",\n            \"updatedAt\": \"2022-10-04T02:56:56.203Z\"\n        },\n        {\n            \"id\": 3,\n            \"username\": \"messiLM10\",\n            \"score\": 4569,\n            \"user_id\": 2,\n            \"createdAt\": \"2022-10-04T02:57:05.358Z\",\n            \"updatedAt\": \"2022-10-04T02:57:05.358Z\"\n        },\n        {\n            \"id\": 4,\n            \"username\": \"ronaldoCR7\",\n            \"score\": 2000,\n            \"user_id\": 1,\n            \"createdAt\": \"2022-10-04T03:08:18.579Z\",\n            \"updatedAt\": \"2022-10-04T03:08:18.579Z\"\n        },\n        {\n            \"id\": 5,\n            \"username\": \"ronaldoCR7\",\n            \"score\": 3000,\n            \"user_id\": 1,\n            \"createdAt\": \"2022-10-04T03:08:24.226Z\",\n            \"updatedAt\": \"2022-10-04T03:08:24.226Z\"\n        },\n        {\n            \"id\": 6,\n            \"username\": \"ronaldoCR7\",\n            \"score\": 5000,\n            \"user_id\": 1,\n            \"createdAt\": \"2022-10-04T03:08:28.241Z\",\n            \"updatedAt\": \"2022-10-04T03:08:28.241Z\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Request Get History by Id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJsZXdhbmRvd3NraTA5QGdtYWlsLmNvbSIsInVzZXJuYW1lIjoiUkwwOSIsImlhdCI6MTY2NDg2MzM2MX0.UXJ2rQHrkqEpvhWDp2m1_pIegfWJgJTTZIMtDqtwmlY"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/userHistory/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"userHistory",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Request Get History by Id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJsZXdhbmRvd3NraTA5QGdtYWlsLmNvbSIsInVzZXJuYW1lIjoiUkwwOSIsImlhdCI6MTY2NDg2MzM2MX0.UXJ2rQHrkqEpvhWDp2m1_pIegfWJgJTTZIMtDqtwmlY"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/userHistory/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"userHistory",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "461"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1cd-C9cg7SY8ts0Ett4BZcamRkg+Pc4\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 04 Oct 2022 06:33:12 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"Success Get Data\",\n    \"data\": [\n        {\n            \"id\": 4,\n            \"username\": \"ronaldoCR7\",\n            \"score\": 2000,\n            \"user_id\": 1,\n            \"createdAt\": \"2022-10-04T03:08:18.579Z\",\n            \"updatedAt\": \"2022-10-04T03:08:18.579Z\"\n        },\n        {\n            \"id\": 5,\n            \"username\": \"ronaldoCR7\",\n            \"score\": 3000,\n            \"user_id\": 1,\n            \"createdAt\": \"2022-10-04T03:08:24.226Z\",\n            \"updatedAt\": \"2022-10-04T03:08:24.226Z\"\n        },\n        {\n            \"id\": 6,\n            \"username\": \"ronaldoCR7\",\n            \"score\": 5000,\n            \"user_id\": 1,\n            \"createdAt\": \"2022-10-04T03:08:28.241Z\",\n            \"updatedAt\": \"2022-10-04T03:08:28.241Z\"\n        }\n    ]\n}"
+				}
+			]
+		}
+	]
+}
