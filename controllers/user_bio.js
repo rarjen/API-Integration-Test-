@@ -2,10 +2,9 @@ const { User_bio } = require("../models");
 module.exports = {
   create: async (req, res, next) => {
     try {
-      const user = req.user;
-      const { bio } = req.body;
+      const { username, bio, user_id } = req.body;
       const created = await User_bio.findOne({
-        where: { username: user.username },
+        where: { username: username },
       });
 
       if (created) {
@@ -16,9 +15,9 @@ module.exports = {
         });
       }
       const create = await User_bio.create({
-        username: user.username,
+        username,
         bio,
-        user_id: user.id,
+        user_id,
       });
       return res.status(201).json({
         status: true,
@@ -106,14 +105,25 @@ module.exports = {
   },
   delete: async (req, res, next) => {
     try {
-      const user = req.user;
+      // const user = req.user;
+      const { user_id } = req.body;
 
-      const deleted = await User_bio.destroy({ where: { user_id: user.id } });
+      const deleted = await User_bio.destroy({ where: { user_id: user_id } });
 
       return res.status(200).json({
         status: true,
         message: "Success Delete Data",
         data: deleted,
+      });
+    } catch (error) {
+      next(error);
+    }
+  },
+  test: async (req, res, next) => {
+    try {
+      return res.status(200).json({
+        status: true,
+        message: "Success",
       });
     } catch (error) {
       next(error);

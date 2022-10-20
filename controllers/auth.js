@@ -60,7 +60,7 @@ module.exports = {
       if (!correct) {
         return res.status(400).json({
           status: false,
-          message: "Email / Password doesn't match",
+          message: "Password doesn't match",
         });
       }
 

@@ -37,10 +37,10 @@ module.exports = {
     try {
       const { id } = req.params;
 
-      const found = await User_history.findAll({ where: { user_id: id } });
+      const found = await User_history.findOne({ where: { user_id: id } });
       if (!found) {
-        return res.status(200).json({
-          status: true,
+        return res.status(400).json({
+          status: false,
           message: "Data Not Exist",
           data: null,
         });

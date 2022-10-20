@@ -1,46 +1,41 @@
 const express = require("express");
-require("dotenv").config();
-const app = express();
-const { Sequelize } = require("sequelize");
-const router = require("./routes");
+// require("dotenv").config();
+// const indexRouter = require("./routes/index");
 const morgan = require("morgan");
-const controller = require("./controllers");
+// const controller = require("./controllers");
+const router = require("./routes");
+// const path = require("path");
+const cookieParser = require("cookie-parser");
+const app = express();
+const HTTP_PORT = 3000;
 
-const { HTTP_PORT, DB_NAME, DB_USERNAME, DB_PASSWORD, DB_HOST, DB_DIALECT } =
-  process.env;
-const sequelize = new Sequelize(DB_NAME, DB_USERNAME, DB_PASSWORD, {
-  host: DB_HOST,
-  dialect: DB_DIALECT,
-});
+app.use(express.json()); // untuk membaca body tipe json
 
-try {
-  sequelize.authenticate();
-  console.log("Connection has been established successfully.");
+app.use(morgan("dev")); // untuk logging
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+// app.use(express.static(path.join(__dirname, "public")));
 
-  app.use(express.json()); // untuk membaca body tipe json
+// app.set("view engine", "ejs");
 
-  app.use(morgan("dev")); // untuk logging
+// app.get("/", (_req, res) => {
+//   res.render("home");
+// });
 
-  app.set("view engine", "ejs");
+// app.get("/error", (_req, _res) => {
+//   error; // mengembalikan error makanya langsung memanggil exception
+// });
 
-  app.get("/", (_req, res) => {
-    res.render("home");
-  });
+app.use("/api", router);
 
-  app.get("/error", (_req, _res) => {
-    error; // mengembalikan error makanya langsung memanggil exception
-  });
+// handle
+// app.use(controller.notFound);
 
-  app.use(router);
+// server-error
+// app.use(controller.exception);
 
-  app.use(controller.notFound);
+// app.listen(HTTP_PORT, () =>
+//   console.info(`Listening on HTTP_PORT ${HTTP_PORT}`)
+// );
 
-  // server-error
-  app.use(controller.exception);
-
-  app.listen(HTTP_PORT, () =>
-    console.info(`Listening on HTTP_PORT ${HTTP_PORT}`)
-  );
-} catch (error) {
-  console.error("Unable to connect to the database:", error);
-}
+module.exports = app;
