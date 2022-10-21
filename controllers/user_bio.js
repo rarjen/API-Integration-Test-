@@ -2,9 +2,10 @@ const { User_bio } = require("../models");
 module.exports = {
   create: async (req, res, next) => {
     try {
-      const { username, bio, user_id } = req.body;
+      const user = req.user;
+      const { bio } = req.body;
       const created = await User_bio.findOne({
-        where: { username: username },
+        where: { username: user.username },
       });
 
       if (created) {
@@ -15,9 +16,9 @@ module.exports = {
         });
       }
       const create = await User_bio.create({
-        username,
+        username: user.username,
         bio,
-        user_id,
+        user_id: user.id,
       });
       return res.status(201).json({
         status: true,
@@ -85,7 +86,7 @@ module.exports = {
     try {
       const { id } = req.params;
 
-      const found = await User_bio.findOne({ where: { id: id } });
+      const found = await User_bio.findOne({ where: { user_id: id } });
       if (!found) {
         return res.status(200).json({
           status: true,

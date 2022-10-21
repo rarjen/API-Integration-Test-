@@ -4,6 +4,7 @@ const auth = require("../controllers/auth");
 const user_history = require("../controllers/user_history");
 const user_bio = require("../controllers/user_bio");
 const mid = require("../helper/middleware");
+const { mustLogin } = require("../helper/middleware");
 
 // router.use("/auth", auth);
 // // router.use("/userBio", user_bio);
@@ -14,9 +15,8 @@ router.post("/auth", auth.create);
 router.post("/auth/login", auth.login);
 
 // User Bio
-// router.get("/test", c.test);
 router.get("/index", user_bio.index);
-router.post("/add", user_bio.create);
+router.post("/add", mid.mustLogin, mustLogin, user_bio.create);
 router.get("/:id", user_bio.show);
 router.delete("/", user_bio.delete);
 

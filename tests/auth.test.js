@@ -3,9 +3,9 @@ const app = require("../app");
 
 // Success Create
 describe.skip("POST /api/auth", () => {
-  it("Should create user", async () => {
-    const email = "otnielkevin.ok@gmail.com";
-    const username = "leinto787";
+  it("Should creat user", async () => {
+    const email = "rarjen57@gmail.com";
+    const username = "leinto779";
     const password = "qwerty123";
     const res = await request(app)
       .post("/api/auth")
@@ -17,7 +17,7 @@ describe.skip("POST /api/auth", () => {
 });
 
 // Error Create : Email Duplicate
-describe("POST /api/auth", () => {
+describe.skip("POST /api/auth", () => {
   it("Should create user", async () => {
     const email = "otnielkevin.ok@gmail.com";
     const username = "leinto787";
@@ -33,7 +33,7 @@ describe("POST /api/auth", () => {
 });
 
 // Error Create : Username Duplicate
-describe("POST /api/auth", () => {
+describe.skip("POST /api/auth", () => {
   it("Should create user", async () => {
     const email = "otnielkevin.ok@gmail.com";
     const username = "leinto787";
@@ -50,9 +50,8 @@ describe("POST /api/auth", () => {
 
 // Success Login
 describe("POST /api/auth/login", () => {
-  it("Should create user", async () => {
-    const email = "otnielkevin.ok@gmail.com";
-    // const username = "leinto787";
+  it("Should get success login", async () => {
+    const email = "rarjen57@gmail.com";
     const password = "qwerty123";
     const res = await request(app)
       .post("/api/auth/login")
@@ -64,10 +63,9 @@ describe("POST /api/auth/login", () => {
 });
 
 // Error Login : Wrong Email
-describe("POST /api/auth/login", () => {
+describe.skip("POST /api/auth/login", () => {
   it("Should create user", async () => {
-    const email = "otnielkevin.ok@gmail.co";
-    // const username = "leinto787";
+    const email = "rarjen57@gmail.co";
     const password = "qwerty123";
     const res = await request(app)
       .post("/api/auth/login")
@@ -79,15 +77,15 @@ describe("POST /api/auth/login", () => {
 });
 
 // Error Login : Wrong Password
-describe.only("POST /api/auth/login", () => {
+describe.skip("POST /api/auth/login", () => {
   it("Should create user", async () => {
-    const email = "otnielkevin.ok@gmail.com";
+    const email = "rarjen57@gmail.com";
     const password = "qwerty13";
     const res = await request(app)
       .post("/api/auth/login")
       .send({ email, password });
     expect(res.statusCode).toBe(400);
     expect(res.body.status).toBe(false);
-    expect(res.body.message).toBe("Password doesn't match");
+    expect(res.body.message).toBe("Email / Password doesn't match");
   });
 });

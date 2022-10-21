@@ -2,8 +2,8 @@ const request = require("supertest");
 const app = require("../app");
 
 // Create Score
-describe("POST /api/history", () => {
-  it("Should create user", async () => {
+describe.skip("POST /api/history", () => {
+  it("Should create user history", async () => {
     const score = 90;
     const res = await request(app)
       .post("/api/history")
@@ -19,7 +19,7 @@ describe("POST /api/history", () => {
 });
 
 // Get All Histories
-describe("GET /api/history", () => {
+describe.skip("GET /api/history", () => {
   it("Should create user", async () => {
     const res = await request(app)
       .get("/api/history/index")
@@ -32,7 +32,7 @@ describe("GET /api/history", () => {
 });
 
 // Get Score By Id
-describe("GET /api/history/1", () => {
+describe.skip("GET /api/history/1", () => {
   it("Should get data with Index 3", async () => {
     const res = await request(app)
       .get("/api/history/1")
