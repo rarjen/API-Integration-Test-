@@ -88,8 +88,8 @@ module.exports = {
 
       const found = await User_bio.findOne({ where: { user_id: id } });
       if (!found) {
-        return res.status(200).json({
-          status: true,
+        return res.status(400).json({
+          status: false,
           message: "Data Not Exist",
           data: null,
         });
@@ -106,10 +106,9 @@ module.exports = {
   },
   delete: async (req, res, next) => {
     try {
-      // const user = req.user;
-      const { user_id } = req.body;
+      const user = req.user;
 
-      const deleted = await User_bio.destroy({ where: { user_id: user_id } });
+      const deleted = await User_bio.destroy({ where: { user_id: user.id } });
 
       return res.status(200).json({
         status: true,

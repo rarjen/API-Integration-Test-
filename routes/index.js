@@ -6,10 +6,6 @@ const user_bio = require("../controllers/user_bio");
 const mid = require("../helper/middleware");
 const { mustLogin } = require("../helper/middleware");
 
-// router.use("/auth", auth);
-// // router.use("/userBio", user_bio);
-// router.use("/userHistory", user_history);
-
 // Auth
 router.post("/auth", auth.create);
 router.post("/auth/login", auth.login);
@@ -18,7 +14,8 @@ router.post("/auth/login", auth.login);
 router.get("/index", user_bio.index);
 router.post("/add", mid.mustLogin, mustLogin, user_bio.create);
 router.get("/:id", user_bio.show);
-router.delete("/", user_bio.delete);
+router.put("/update", mid.mustLogin, user_bio.update);
+router.delete("/:id", mid.mustLogin, user_bio.delete);
 
 // User History
 router.post("/history", mid.mustLogin, user_history.create);
