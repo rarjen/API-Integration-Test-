@@ -16,14 +16,6 @@ module.exports = {
           data: null,
         });
       }
-      const userFound = await User.findOne({ where: { username } });
-      if (userFound) {
-        return res.status(400).json({
-          status: false,
-          message: "Username Already Taken",
-          data: null,
-        });
-      }
       const encryptedPassword = await bcrypt.hash(password, 10);
 
       const created = await User.create({
@@ -39,28 +31,29 @@ module.exports = {
           username: created.username,
         },
       });
-    } catch (error) {
-      next(error);
+    } catch (err) {
+      next(err);
     }
   },
+
   login: async (req, res, next) => {
     try {
       const { email, password } = req.body;
-
-      console.log(email);
       const user = await User.findOne({ where: { email: email } });
       if (!user) {
         return res.status(400).json({
           status: false,
-          message: "Email / Password doesn't match",
+          message: "Login Error",
+          data: null,
         });
       }
 
-      const correct = await bcrypt.compare(password, user.password);
-      if (!correct) {
+      const match = await bcrypt.compare(password, user.password);
+      if (!match) {
         return res.status(400).json({
           status: false,
-          message: "Password doesn't match",
+          message: "Login Error",
+          data: null,
         });
       }
 
@@ -69,7 +62,6 @@ module.exports = {
         email: user.email,
         username: user.username,
       };
-
       const token = jwt.sign(payload, JWT_SIGNATURE_KEY);
 
       return res.status(200).json({
@@ -77,8 +69,8 @@ module.exports = {
         message: "Success Login",
         data: { token },
       });
-    } catch (error) {
-      next(error);
+    } catch (err) {
+      next(err);
     }
   },
 };

@@ -38,7 +38,7 @@ module.exports = {
       if (!created) {
         return res.status(400).json({
           status: false,
-          message: "You've Haven't Created Bio Yet",
+          message: "You Haven't Created Bio Yet",
           data: null,
         });
       }
